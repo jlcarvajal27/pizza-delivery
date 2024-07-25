@@ -1,0 +1,113 @@
+.container {
+  display: flex;
+  position: relative;
+  padding: 1rem;
+}
+
+.leftSide {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.cherryDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  background-color: var(--pink);
+  border: 2px solid white;
+  margin-top: 3rem;
+  padding: 1rem;
+  border-radius: 2.5rem;
+  font-size: 0.8rem;
+  color: var(--themeRed);
+  font-weight: bold;
+  box-shadow: var(--shadow);
+}
+
+.mainText {
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  font-size: 5rem;
+}
+
+.miniText {
+  width: 60%;
+  color: var(--gray);
+  font-weight: 600;
+}
+
+.rightSide {
+  position: relative;
+}
+
+.imageContainer {
+  position: relative;
+
+  left: 7rem;
+}
+
+.contactUs {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  align-items: center;
+  width: max-content;
+  padding: 1rem;
+  border-radius: 5rem;
+  top: 11rem;
+  left: 6rem;
+  gap: 1rem;
+  background-color: white;
+  box-shadow: var(--shadow);
+  color: var(--themeRed);
+}
+
+.contactUs div {
+  background-color: rgb(59, 208, 59);
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contactUs:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+.pizza {
+  display: flex;
+  gap: 1rem;
+  margin-top: -7.5rem;
+  background-color: white;
+  box-shadow: var(--shadow);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  position: absolute;
+  left: 29rem;
+  width: max-content;
+}
+
+.pizza:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.pizza > :nth-child(1) {
+  width: 6rem;
+  height: 4rem;
+  overflow: hidden;
+  border-radius: 0.5rem;
+}
+
+.pizza > :nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-weight: bold;
+}

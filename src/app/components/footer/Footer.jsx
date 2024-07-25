@@ -1,0 +1,24 @@
+import React from "react";
+import { UilFacebook, UilGithub, UilInstagram } from "@iconscout/react-unicons";
+import css from "./Footer.module.css";
+import Image from "next/image";
+
+const Footer = () => {
+  return (
+    <div className={css.container}>
+      <span>ALL RIGHT RESERVED</span>
+      <div className={css.social}>
+        <UilFacebook size={45} />
+        <UilGithub size={45} />
+        <UilInstagram size={45} />
+      </div>
+
+      <div className={css.logo}>
+        <Image src="/cooking.png" alt="logo" width={50} height={50} />{" "}
+        <span>Jc Food </span>
+      </div>
+    </div>
+  );
+};
+
+export default Footer;

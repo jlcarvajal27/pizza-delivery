@@ -1,0 +1,104 @@
+"use client";
+
+import css from "./Cart.module.css";
+import { useStore } from "@/app/store/store";
+import React, { useState } from "react";
+import Image from "next/image";
+import PaymentModal from "../components/PaymentModal/PaymentModal";
+
+const Cart = () => {
+  const cartData = useStore((state) => state.cart);
+  const removePizza = useStore((state) => state.removePizza);
+  const [payment, setPayment] = useState(null);
+
+  const handleRemovePizza = (pizzaId, pizzaSize) => {
+    removePizza(pizzaId, pizzaSize);
+  };
+
+  const total = cartData.pizzas.reduce((a, b) => a + b.quantity * b.price, 0);
+
+  const handleOnDelivery = () => {
+    setPayment(0);
+    typeof window !== "undefined" &&
+      localStorage.setItem("total", total.toFixed(2));
+  };
+  const closeModal = () => {
+    setPayment(null);
+  };
+
+  return (
+    <div className={css.container}>
+      <div className={css.details}>
+        <table className={css.table}>
+          <thead>
+            <tr>
+              <th>Pizza</th>
+              <th>Name</th>
+              <th>Size</th>
+              <th> Price</th>
+              <th>Quantity</th>
+              <th>Total</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody className={css.body}>
+            {cartData.pizzas.length > 0 &&
+              cartData.pizzas.map((pizza, index) => (
+                <tr key={index}>
+                  <td className={css.cell}>
+                    <Image
+                      className={css.image}
+                      src={pizza.image}
+                      height={120}
+                      width={120}
+                      alt={pizza.name}
+                    />
+                  </td>
+                  <td>{pizza.name}</td>
+                  <td>
+                    {pizza.size === 0
+                      ? "Small"
+                      : pizza.size === 1
+                      ? "Medium"
+                      : "large"}
+                  </td>
+                  <td>{pizza.price}</td>
+                  <td>{pizza.quantity}</td>
+                  <td>{pizza.quantity * pizza.price}</td>
+                  <td
+                    className={css.delete}
+                    onClick={() => handleRemovePizza(pizza.id, pizza.size)}
+                  >
+                    X
+                  </td>
+                </tr>
+              ))}
+          </tbody>
+        </table>
+      </div>
+
+      <div className={css.cart}>
+        <span>Cart</span>
+        <div className={css.CartDetails}>
+          <div>
+            <span>Items</span>
+            <span>{cartData.pizzas.length}</span>
+          </div>
+          <div>
+            <span>Total</span>
+            <span>$ {total.toFixed(2)}</span>
+          </div>
+        </div>
+        <div className={css.buttons}>
+          <button className="btn" onClick={handleOnDelivery}>
+            Pay on Delivery
+          </button>
+          <button className="btn"> Pay Now</button>
+        </div>
+      </div>
+      <PaymentModal payment={payment} closeModal={closeModal} />
+    </div>
+  );
+};
+
+export default Cart;
