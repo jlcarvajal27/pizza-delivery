@@ -5,6 +5,7 @@ import { useStore } from "@/app/store/store";
 import React, { useState } from "react";
 import Image from "next/image";
 import PaymentModal from "../components/PaymentModal/PaymentModal";
+import toast from "react-hot-toast";
 
 const Cart = () => {
   const cartData = useStore((state) => state.cart);
@@ -18,10 +19,32 @@ const Cart = () => {
   const total = cartData.pizzas.reduce((a, b) => a + b.quantity * b.price, 0);
 
   const handleOnDelivery = () => {
-    setPayment(0);
-    typeof window !== "undefined" &&
+    setPayment(1);
+    if (typeof window !== "undefined") {
       localStorage.setItem("total", total.toFixed(2));
+    }
   };
+
+  const handleOnCheckout = async () => {
+    if (typeof window !== "undefined") {
+      localStorage.setItem("total", total.toFixed(2));
+    }
+
+    const response = await fetch("/api/checkout", {
+      method: "POST",
+      body: JSON.stringify(cartData.pizzas),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    const data = await response.json();
+    if (data.url) {
+      window.location = data.url;
+    } else {
+      toast.error("Something went wrong, please try again.");
+    }
+  };
+
   const closeModal = () => {
     setPayment(null);
   };
@@ -60,7 +83,7 @@ const Cart = () => {
                       ? "Small"
                       : pizza.size === 1
                       ? "Medium"
-                      : "large"}
+                      : "Large"}
                   </td>
                   <td>{pizza.price}</td>
                   <td>{pizza.quantity}</td>
@@ -93,7 +116,9 @@ const Cart = () => {
           <button className="btn" onClick={handleOnDelivery}>
             Pay on Delivery
           </button>
-          <button className="btn"> Pay Now</button>
+          <button className="btn" onClick={handleOnCheckout}>
+            Pay Now
+          </button>
         </div>
       </div>
       <PaymentModal payment={payment} closeModal={closeModal} />

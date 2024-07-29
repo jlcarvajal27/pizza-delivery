@@ -45,7 +45,8 @@
 
 .imageContainer {
   position: relative;
-
+  width: 630;
+  height: 90;
   left: 7rem;
 }
 

@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import css from "./Header.module.css";
-import { UilShoppingBag } from "@iconscout/react-unicons";
+import UilShoppingBagWrapper from "./UilShoppingBagWrapper";
 import { useStore } from "@/app/store/store";
 import Link from "next/link";
 
@@ -15,7 +15,7 @@ const Header = () => {
         <Link href="/">
           <Image src="/cooking.png" alt="logo" width={50} height={50} />
         </Link>
-        <span>Jc Food </span>
+        <span>Jc Food</span>
       </div>
 
       <ul className={css.menu}>
@@ -35,7 +35,7 @@ const Header = () => {
       <div className={css.rightSide}>
         <Link href="/cart">
           <div className={css.cart}>
-            <UilShoppingBag size={35} />
+            <UilShoppingBagWrapper />
             <div className={css.badge}>{cartItems}</div>
           </div>
         </Link>

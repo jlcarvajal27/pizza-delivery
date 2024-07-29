@@ -42,3 +42,8 @@
   text-align: center;
   justify-content: center;
 }
+
+.imageWrapper {
+  width: 310;
+  height: 310;
+}
