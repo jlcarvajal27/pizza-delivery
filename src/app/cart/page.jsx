@@ -20,16 +20,9 @@ const Cart = () => {
 
   const handleOnDelivery = () => {
     setPayment(1);
-    if (typeof window !== "undefined") {
-      localStorage.setItem("total", total.toFixed(2));
-    }
   };
 
   const handleOnCheckout = async () => {
-    if (typeof window !== "undefined") {
-      localStorage.setItem("total", total.toFixed(2));
-    }
-
     const response = await fetch("/api/checkout", {
       method: "POST",
       body: JSON.stringify(cartData.pizzas),

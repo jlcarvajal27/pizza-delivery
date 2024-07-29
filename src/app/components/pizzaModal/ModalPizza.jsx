@@ -3,7 +3,7 @@ import css from "./pizza.module.css";
 import { useEffect, useState } from "react";
 import { useStore } from "@/app/store/store";
 import toast from "react-hot-toast";
-import Modal from "./Modal";
+import Modal from "../modal/Modal";
 
 const ModalPizza = ({ pizza, closeModal, isOpen }) => {
   if (!pizza) return null;
@@ -13,6 +13,7 @@ const ModalPizza = ({ pizza, closeModal, isOpen }) => {
   const [quantity, setQuantity] = useState(1);
 
   const addPizza = useStore((state) => state.addPizza);
+
   const addCartPizzas = () => {
     const pizzaToAdd = {
       ...pizza,

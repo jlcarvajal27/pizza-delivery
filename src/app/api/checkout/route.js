@@ -15,14 +15,13 @@ export async function POST(request) {
           currency: "usd",
           product_data: {
             name: item.name,
-            images: ["https://i.imgur.com/EHyR2.png"],
           },
-          unit_amount: 10,
+          unit_amount: item.price * 100,
         },
         quantity: item.quantity,
       };
     });
-    console.log(line_items);
+
     const session = await stripe.checkout.sessions.create({
       success_url: "https://localhost:3000/success",
       mode: "payment",
