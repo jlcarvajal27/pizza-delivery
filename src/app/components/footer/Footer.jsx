@@ -1,5 +1,5 @@
 import React from "react";
-import { UilFacebook, UilGithub, UilInstagram } from "@iconscout/react-unicons";
+import { UilGithub, UilLinkedin } from "@iconscout/react-unicons";
 import css from "./Footer.module.css";
 import Image from "next/image";
 
@@ -8,9 +8,15 @@ const Footer = () => {
     <div className={css.container}>
       <span>ALL RIGHT RESERVED</span>
       <div className={css.social}>
-        <UilFacebook size={45} />
-        <UilGithub size={45} />
-        <UilInstagram size={45} />
+        <a href="https://github.com/jlcarvajal27" target="_blank">
+          <UilGithub size={45} />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/jorge-luis-carvajal/"
+          target="_blank"
+        >
+          <UilLinkedin size={45} />
+        </a>
       </div>
 
       <div className={css.logo}>

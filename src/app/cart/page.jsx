@@ -1,8 +1,7 @@
 "use client";
-
-import css from "./Cart.module.css";
+import { useEffect, useState } from "react";
 import { useStore } from "@/app/store/store";
-import React, { useState } from "react";
+import css from "./Cart.module.css";
 import Image from "next/image";
 import PaymentModal from "../components/PaymentModal/PaymentModal";
 import toast from "react-hot-toast";
@@ -10,7 +9,12 @@ import toast from "react-hot-toast";
 const Cart = () => {
   const cartData = useStore((state) => state.cart);
   const removePizza = useStore((state) => state.removePizza);
+  const initializeCart = useStore((state) => state.initializeCart);
   const [payment, setPayment] = useState(null);
+
+  useEffect(() => {
+    initializeCart();
+  }, [initializeCart]);
 
   const handleRemovePizza = (pizzaId, pizzaSize) => {
     removePizza(pizzaId, pizzaSize);
