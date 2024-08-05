@@ -14,7 +14,7 @@ const Benefits = () => {
       <div className={css.services}>
         <div className={css.features}>
           <div className={css.imageWrapper}>
-            <Image src="/s1.png" width={310} height={310} />
+            <Image src="/s1.png" width={310} height={310} alt="s1" />
           </div>
           <span>Easy to Orders</span>
           <span>You only need a few steps in food ordering.</span>
@@ -22,7 +22,7 @@ const Benefits = () => {
 
         <div className={css.features}>
           <div className={css.imageWrapper}>
-            <Image src="/s2.png" width={310} height={310} />
+            <Image src="/s2.png" width={310} height={310} alt="s2" />
           </div>
           <span>Easy to Orders</span>
           <span>Delivery that is always on time even faster.</span>
@@ -30,7 +30,7 @@ const Benefits = () => {
 
         <div className={css.features}>
           <div className={css.imageWrapper}>
-            <Image src="/s3.png" width={345} height={310} />
+            <Image src="/s3.png" width={345} height={310} alt="s3" />
           </div>
           <span>Easy to Orders</span>
           <span>Not only fast for us, quality is also number one.</span>
