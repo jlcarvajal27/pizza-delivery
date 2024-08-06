@@ -5,7 +5,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { pizzaData } from "@/app/data/pizza-data";
 import ModalPizza from "../components/pizzaModal/ModalPizza";
-import Image from "next/image";
 
 const CardMenu = () => {
   const [selectedPizza, setSelectedPizza] = useState(null);
@@ -48,7 +47,7 @@ const CardMenu = () => {
           {pizzaData.map((pizza) => (
             <div key={pizza.id} className={css.card}>
               <div className={css.cardImageContainer}>
-                <Image className="w-full" src={pizza.image} alt={pizza.name} />
+                <img className="w-full" src={pizza.image} alt={pizza.name} />
               </div>
               <div className={css.cardContent}>
                 <h5 className={css.cardTitle}>{pizza.name}</h5>

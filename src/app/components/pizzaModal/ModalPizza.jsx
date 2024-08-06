@@ -6,13 +6,23 @@ import toast from "react-hot-toast";
 import Modal from "../modal/Modal";
 
 const ModalPizza = ({ pizza, closeModal, isOpen }) => {
-  if (!pizza) return null;
-
   const [size, setSize] = useState(1);
-  const [price, setPrice] = useState(pizza.price);
+  const [price, setPrice] = useState(0);
   const [quantity, setQuantity] = useState(1);
 
   const addPizza = useStore((state) => state.addPizza);
+
+  const sizePrices = pizza
+    ? [pizza.price * 0.7, pizza.price, pizza.price * 1.6]
+    : [];
+
+  useEffect(() => {
+    if (pizza) {
+      setPrice(sizePrices[size] * quantity);
+    }
+  }, [size, sizePrices, quantity, pizza]);
+
+  if (!pizza) return null;
 
   const addCartPizzas = () => {
     const pizzaToAdd = {
@@ -34,12 +44,6 @@ const ModalPizza = ({ pizza, closeModal, isOpen }) => {
       setQuantity(quantity + 1);
     }
   };
-
-  const sizePrices = [pizza.price * 0.7, pizza.price, pizza.price * 1.6];
-
-  useEffect(() => {
-    setPrice(sizePrices[size] * quantity);
-  }, [size, sizePrices, quantity]);
 
   return (
     <Modal isOpen={isOpen} onClose={closeModal}>
