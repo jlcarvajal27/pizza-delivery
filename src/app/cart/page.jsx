@@ -84,7 +84,7 @@ const Cart = () => {
                   </td>
                   <td>{pizza.price}</td>
                   <td>{pizza.quantity}</td>
-                  <td>{pizza.quantity * pizza.price}</td>
+                  <td>{pizza.quantity * pizza.price.toFixed(2)}</td>
                   <td
                     className={css.delete}
                     onClick={() => handleRemovePizza(pizza.id, pizza.size)}

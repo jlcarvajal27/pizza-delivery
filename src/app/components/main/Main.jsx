@@ -6,8 +6,6 @@ import { UilPhone } from "@iconscout/react-unicons";
 const Main = () => {
   return (
     <div className={css.container}>
-      {/* left side */}
-
       <div className={css.leftSide}>
         <div className={css.cherryDiv}>
           <span>More Than Faster</span>
@@ -28,8 +26,6 @@ const Main = () => {
         </span>
         <button className="btn">Get Started</button>
       </div>
-
-      {/* rigth side */}
 
       <div className={css.rightSide}>
         <div className={css.imageContainer}>
