@@ -40,7 +40,13 @@ const Main = () => {
         <div className={css.contactUs}>
           <span>Contact Us</span>
           <div>
-            <UilPhone color="white" />
+            <a
+              href="https://wa.me/3014845580?text=Hola,
+            %20tengo%20una%20pregunta%20sobre%20tu%20servicio"
+              target="_blank"
+            >
+              <UilPhone color="white" />
+            </a>
           </div>
         </div>
 
