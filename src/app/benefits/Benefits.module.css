@@ -47,3 +47,15 @@
   width: 310;
   height: 310;
 }
+
+/* responsive */
+
+@media (max-width: 768px) {
+  .services {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    width: 210;
+    height: 210;
+  }
+}

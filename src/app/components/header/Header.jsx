@@ -15,7 +15,6 @@ const Header = () => {
         <Link href="/">
           <Image src="/cooking.png" alt="logo" width={50} height={50} />
         </Link>
-        <span>Jc Food</span>
       </div>
 
       <ul className={css.menu}>

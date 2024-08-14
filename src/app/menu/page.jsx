@@ -8,9 +8,9 @@ const Menu = () => {
     <>
       <div id="menu" className={css.container}>
         <div className={css.heading}>
-          <span>Our Menu</span>
-          <span>Menu that Allways</span>
-          <span>Make your fall in love </span>
+          <span>Our Menu.</span>
+          <span>Menu that will always </span>
+          <span>Make you fall in love </span>
         </div>
       </div>
       <CardMenu />

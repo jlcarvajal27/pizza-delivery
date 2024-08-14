@@ -56,3 +56,11 @@
   height: 20px;
   left: 1.3rem;
 }
+
+/* responsive  */
+
+@media (max-width: 768px) {
+  .menu {
+    font-size: 0.9rem;
+  }
+}

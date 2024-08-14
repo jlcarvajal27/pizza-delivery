@@ -43,13 +43,6 @@
   position: relative;
 }
 
-.imageContainer {
-  position: relative;
-  width: 630;
-  height: 90;
-  left: 7rem;
-}
-
 .contactUs {
   display: flex;
   justify-content: center;
@@ -79,6 +72,13 @@
 .contactUs:hover {
   cursor: pointer;
   transform: scale(1.1);
+}
+
+.imageContainer {
+  position: relative;
+  width: 630;
+  height: 90;
+  left: 7rem;
 }
 
 .pizza {
@@ -111,4 +111,29 @@
   flex-direction: column;
   justify-content: space-between;
   font-weight: bold;
+}
+
+/* responsive */
+
+@media (max-width: 768px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .mainText {
+    font-size: 2.5rem;
+  }
+  .rightSide {
+    justify-content: center;
+  }
+
+  .contactUs {
+    margin-left: -7.7rem;
+    margin-top: -7rem;
+  }
+
+  .imageContainer {
+    left: 30px;
+  }
 }

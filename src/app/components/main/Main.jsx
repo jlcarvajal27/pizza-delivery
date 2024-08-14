@@ -41,8 +41,7 @@ const Main = () => {
           <span>Contact Us</span>
           <div>
             <a
-              href="https://wa.me/3014845580?text=Hola,
-            %20tengo%20una%20pregunta%20sobre%20tu%20servicio"
+              href="https://wa.me/3014845580?text=Hola,%20tengo%20una%20pregunta%20sobre%20tu%20servicio"
               target="_blank"
             >
               <UilPhone color="white" />
