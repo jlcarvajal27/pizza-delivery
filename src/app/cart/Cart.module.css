@@ -78,3 +78,13 @@
   color: var(--themeRed);
   border: 2px solid var(--themeRed);
 }
+
+/* responsive */
+
+@media (max-width: 768px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem;
+  }
+}
