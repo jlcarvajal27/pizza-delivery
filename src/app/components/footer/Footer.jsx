@@ -1,12 +1,12 @@
 import React from "react";
 import { UilGithub, UilLinkedin } from "@iconscout/react-unicons";
 import css from "./Footer.module.css";
-import Image from "next/image";
+// import Image from "next/image";
 
 const Footer = () => {
   return (
     <div className={css.container}>
-      <span>ALL RIGHT RESERVED</span>
+      <span>Dev: Jorge Carvajal ©</span>
       <div className={css.social}>
         <a href="https://github.com/jlcarvajal27" target="_blank">
           <UilGithub size={45} />
@@ -19,10 +19,10 @@ const Footer = () => {
         </a>
       </div>
 
-      <div className={css.logo}>
+      {/* <div className={css.logo}>
         <Image src="/cooking.png" alt="logo" width={50} height={50} />{" "}
         <span>Jc Food </span>
-      </div>
+      </div> */}
     </div>
   );
 };
