@@ -24,6 +24,7 @@
   gap: 2rem;
   justify-content: center;
   z-index: 99;
+  font-weight: bold;
 }
 
 .menu li:hover {
