@@ -62,7 +62,7 @@ const CartCard = () => {
               <div className={css.info}>
                 <h3>{pizza.name}</h3>
                 <p>
-                  Size:{" "}
+                  Size:
                   <span>
                     {pizza.size === 0
                       ? "Small"

@@ -5,6 +5,7 @@ const useStore = create((set) => ({
     pizzas: [],
   },
   setCart: (cart) => set(() => ({ cart })),
+
   addPizza: (pizza) =>
     set((state) => {
       const updatedCart = {
@@ -14,6 +15,7 @@ const useStore = create((set) => ({
       localStorage.setItem("cart", JSON.stringify(updatedCart));
       return { cart: updatedCart };
     }),
+
   removePizza: (pizzaId, pizzaSize) =>
     set((state) => {
       const updatedCart = {
@@ -25,6 +27,7 @@ const useStore = create((set) => ({
       localStorage.setItem("cart", JSON.stringify(updatedCart));
       return { cart: updatedCart };
     }),
+
   initializeCart: () => {
     const storedCart = localStorage.getItem("cart");
     if (storedCart) {
